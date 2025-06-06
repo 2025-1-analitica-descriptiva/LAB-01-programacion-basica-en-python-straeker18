@@ -20,6 +20,7 @@ def pregunta_12():
                 suma_por_letra[letra] = suma_valores
     return dict(sorted(suma_por_letra.items()))
 
+
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor
     la suma de los valores de la columna 5 sobre todo el archivo.
