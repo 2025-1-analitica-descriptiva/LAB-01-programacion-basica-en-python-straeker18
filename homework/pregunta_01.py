@@ -7,7 +7,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_01():
     total = 0
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             parts = line.strip().split("\t")
             total += int(parts[1])

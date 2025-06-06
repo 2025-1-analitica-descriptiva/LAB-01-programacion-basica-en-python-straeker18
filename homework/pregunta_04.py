@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_04():
     conteo_meses = {}
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             partes = line.strip().split("\t")
             fecha = partes[2]

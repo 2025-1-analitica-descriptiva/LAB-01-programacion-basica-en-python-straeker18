@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_02():
     conteo = {}
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             letra = line.strip().split("\t")[0]
             if letra in conteo:

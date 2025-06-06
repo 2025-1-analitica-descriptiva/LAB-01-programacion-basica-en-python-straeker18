@@ -7,7 +7,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_08():
     asociaciones = {}
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             partes = line.strip().split("\t")
             letra = partes[0]

@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_09():
     conteo_claves = {}
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             columna5 = line.strip().split("\t")[4]
             pares = columna5.split(",")

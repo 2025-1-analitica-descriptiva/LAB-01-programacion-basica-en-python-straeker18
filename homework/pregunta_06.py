@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_06():
     valores = {}
-    with open("files\input\data.csv", "r") as file:
+    with open("files/input/data.csv", "r") as file:
         for line in file:
             partes = line.strip().split("\t")
             columna5 = partes[4]
