@@ -5,8 +5,26 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
-
 def pregunta_08():
+    asociaciones = {}
+    with open("files\input\data.csv", "r") as file:
+        for line in file:
+            partes = line.strip().split("\t")
+            letra = partes[0]
+            numero = int(partes[1])
+            if numero in asociaciones:
+                if letra not in asociaciones[numero]:
+                    asociaciones[numero].append(letra)
+            else:
+                asociaciones[numero] = [letra]
+
+    resultado = []
+    for numero in sorted(asociaciones.keys()):
+        letras_ordenadas = sorted(asociaciones[numero])
+        resultado.append((numero, letras_ordenadas))
+    
+    return resultado
+
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla
     contiene  el valor de la segunda columna; la segunda parte de la tupla

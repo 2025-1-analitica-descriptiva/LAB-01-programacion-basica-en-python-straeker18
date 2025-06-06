@@ -7,6 +7,28 @@ utilizar pandas, numpy o scipy.
 
 
 def pregunta_06():
+    valores = {}
+    with open("files\input\data.csv", "r") as file:
+        for line in file:
+            partes = line.strip().split("\t")
+            columna5 = partes[4]
+            pares = columna5.split(",")
+            for par in pares:
+                clave, valor = par.split(":")
+                valor = int(valor)
+                if clave in valores:
+                    valores[clave].append(valor)
+                else:
+                    valores[clave] = [valor]
+    
+    resultado = []
+    for clave in sorted(valores.keys()):
+        minimo = min(valores[clave])
+        maximo = max(valores[clave])
+        resultado.append((clave, minimo, maximo))
+    
+    return resultado
+
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras
     corresponde a una clave y el valor despues del caracter `:` corresponde al

@@ -5,8 +5,21 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
-
 def pregunta_07():
+    asociaciones = {}
+    with open("files\input\data.csv", "r") as file:
+        for line in file:
+            partes = line.strip().split("\t")
+            letra = partes[0]
+            numero = int(partes[1])
+            if numero in asociaciones:
+                asociaciones[numero].append(letra)
+            else:
+                asociaciones[numero] = [letra]
+    
+    resultado = sorted(asociaciones.items())
+    return resultado
+
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla
     contiene un valor posible de la columna 2 y una lista con todas las letras
